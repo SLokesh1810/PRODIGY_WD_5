@@ -1,0 +1,288 @@
+body {
+    font-family: sans-serif;
+    background-color: rgba(0, 212, 255, 1);
+    color: rgb(0, 52, 97);
+    background-repeat: no-repeat;
+}
+
+.topCon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 130px;
+    margin: 2rem auto;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(0, 212, 255, 1);
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+#closeSearch {
+    display: none;
+    font-weight: 600;
+}
+
+#searchBtn {
+    padding: 8px;
+    font-size: 25px;
+    color: rgb(0, 52, 97);
+    background-color: transparent;
+    border: none;
+    transition: all 0.3s ease-out;
+    margin-right: 10px;
+}
+
+#searchBtn:hover {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.currentLocal {
+    width: min(95%, 1200px);
+    padding: 10px;
+    height: 280px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 30% 40% 30%;
+    position: relative;
+    border: 3px solid rgb(0, 52, 97);
+    border-radius: 10px;
+    background-color: rgb(0, 52, 97);
+    color: aliceblue;
+    align-self: center;
+    margin: auto;
+    margin-bottom: 0;
+}
+
+.heading {
+    font-weight: 700;
+    padding: 20px 0 10px 20px;
+    font-size: 30px;
+    grid-column: 1/5;
+    grid-row: 1;
+    border-bottom: 2px solid aliceblue;
+}
+
+.cityName {
+    font-size: 30px;
+    padding-left: 20px;
+    grid-row: 2;
+    grid-column: 1/4;
+    text-align: left;
+}
+
+.imgNcondt {
+    grid-row: 2;
+    grid-column: 4/5;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.temps {
+    font-size: 18px;
+    margin: 0;
+    padding: 10px;
+    padding-top: 10px;
+    display: inline-block;
+    text-align: center;
+    border-top: 2px solid aliceblue;
+    transition: all 0.3s ease-out;
+}
+
+.temps:hover {
+    font-size: 20px;
+}
+
+.tHead {
+    font-size: 20px;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+@keyframes scrollLeft {
+    to {
+        left: -200px;
+    }
+}
+
+.localWeathers {
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    height: 250px;
+    margin-top: 5rem;
+    overflow: hidden;
+    mask-image: linear-gradient(to right,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1) 20%,
+            rgba(0, 0, 0, 1) 80%,
+            rgba(0, 0, 0, 0));
+}
+
+.weathercondts {
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    left: max(calc(200px * 8), 100%);
+    animation-name: scrollLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transition: all 0.3s ease-out;
+}
+
+.weathercondts:hover {
+    font-size: 15px;
+    background-color: rgb(0, 52, 97);
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.c1 {
+    animation-delay: calc(30s / 6 * (6 - 1) * -1);
+}
+
+.c2 {
+    animation-delay: calc(30s / 6 * (6 - 2) * -1);
+}
+
+.c3 {
+    animation-delay: calc(30s / 6 * (6 - 3) * -1);
+}
+
+.c4 {
+    animation-delay: calc(30s / 6 * (6 - 4) * -1);
+}
+
+.c5 {
+    animation-delay: calc(30s / 6 * (6 - 5) * -1);
+}
+
+.c6 {
+    animation-delay: calc(30s / 6 * (6 - 6) * -1);
+}
+
+.search {
+    z-index: 1;
+    position: absolute;
+    align-self: center;
+    left: 10%;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgb(0, 52, 97);
+    color: aliceblue;
+    display: none;
+}
+
+.search input {
+    width: 90%;
+    height: 31.5px;
+    border: 1px solid transparent;
+    margin-top: 10px;
+    margin-left: 0;
+    border-radius: 10px 0 0 10px;
+    padding-left: 10px;
+}
+
+.search button {
+    height: 35px;
+    margin-right: 0;
+    border: 1px solid transparent;
+    border-radius: 0 10px 10px 0;
+    margin-bottom: 10px;
+}
+
+.search .tooltip {
+    text-align: left;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    min-height: 10px;
+    max-height: 300px;
+    display: none;
+}
+
+.search .tooltip p:hover {
+    background-color: rgb(2, 44, 82);
+    cursor: pointer;
+}
+
+.weatherReport {
+    background-color: aliceblue;
+    display: flex;
+}
+
+.selectedCity {
+    width: min(95%, 1200px);
+    padding: 10px;
+    height: 280px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 30% 40% 30%;
+    position: relative;
+    border: 3px solid aliceblue;
+    border-radius: 10px;
+    background-color: rgba(0, 212, 255, 1);
+    color: rgb(0, 52, 97);
+    align-self: center;
+    margin: auto;
+    margin-bottom: 0;
+    box-shadow: 0 0 15px rgb(0, 52, 97);
+    display: none;
+}
+
+.selectedCity .heading {
+    grid-column: 1/4;
+}
+
+.selectedCity button{
+    grid-column: 4;
+    background-color: rgba(0, 212, 255, 1);
+    border: none;
+    text-align: right;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(0, 52, 97);
+    border-bottom: 2px solid aliceblue;
+    cursor: pointer;
+}
+
+.selectedCity button:hover {
+    font-size: 35px;
+}
+
+.country {
+    font-size: 30px;
+    padding-left: 20px;
+    grid-row: 2;
+    grid-column: 1/2;
+    text-align: left;
+}
+
+.name {
+    font-size: 30px;
+    padding-left: 20px;
+    grid-row: 2;
+    grid-column: 2/4;
+    text-align: left;
+}
