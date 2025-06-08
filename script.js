@@ -22,7 +22,7 @@ function openSearch(data) {
         document.querySelector('.selectedCity').style.pointerEvents = 'auto';
     }
 }
-const apiKey = '93cfe59fd5019c508d6a31e227259420';
+const apiKey = '';
 
 navigator.geolocation.getCurrentPosition(position => {
     const lat = position.coords.latitude;
